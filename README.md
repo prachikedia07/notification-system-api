@@ -43,6 +43,15 @@ Grafana Dashboard
 - Grafana
 - Docker
 
+## System Flow
+
+1. Client sends notification request
+2. API validates and stores notification in MongoDB
+3. Job is pushed to Redis queue
+4. Worker processes notification asynchronously
+5. Retry logic handles failures with exponential backoff
+6. Metrics exported for Prometheus monitoring
+
 ## Running Locally
 
 Install dependencies:
