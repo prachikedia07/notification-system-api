@@ -15,7 +15,7 @@ A backend system demonstrating production-grade backend patterns such as asynchr
 - Docker support for infrastructure
 
 ## Architecture
-
+```
 Client  
 ↓  
 Fastify API  
@@ -31,6 +31,7 @@ Worker Processing
 Prometheus Metrics  
 ↓  
 Grafana Dashboard  
+```
 
 ## Tech Stack
 
@@ -53,29 +54,29 @@ Grafana Dashboard
 6. Metrics exported for Prometheus monitoring
 
 ## Running Locally
-
+```
 Install dependencies:
   npm install
 Start backend:
   npm run dev
 Start monitoring stack:
   docker compose up -d
-  
+ ``` 
 ##Endpoints:
 
-POST /notifications
-GET /notifications
-GET /notifications/:id
-DELETE /notifications/:id
+- POST /notifications
+- GET /notifications
+- GET /notifications/:id
+- DELETE /notifications/:id
 
 Metrics endpoint:
 
   /metrics
   Metrics Tracked:
-   notifications_created_total
-   jobs_processed_total
-   jobs_failed_total
-   notification_queue_size
+   - notifications_created_total
+   - jobs_processed_total
+   - jobs_failed_total
+   - notification_queue_size
    
 ##Observability:
 
