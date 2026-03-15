@@ -14,6 +14,14 @@ app.get("/metrics", async (req, reply) => {
   return register.metrics();
 });
 
+app.get("/", async (req, reply) => {
+  return {
+    status: "ok",
+    service: "Notification System API",
+    uptime: process.uptime()
+  };
+});
+
 app.register(notificationRoutes);
 
 const start = async () => {
