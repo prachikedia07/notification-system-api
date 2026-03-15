@@ -58,7 +58,7 @@ Prometheus Metrics → Grafana Dashboard
 
 **Async Processing** — notifications are processed in the background via BullMQ workers, so the API returns instantly without blocking on the actual processing work.
 
-**Retry with Exponential Backoff** — if a job fails, BullMQ retries it with increasing delays. This handles transient failures gracefully without hammering the system.
+**Retry with Exponential Backoff** — if a job fails, BullMQ retries it with increasing delays.
 
 **Rate Limiting** — Redis-based rate limiter sits in front of the API to prevent abuse and protect downstream services.
 
