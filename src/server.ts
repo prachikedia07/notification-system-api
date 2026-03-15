@@ -1,11 +1,12 @@
-import Fastify from "fastify";
 import dotenv from "dotenv";
+dotenv.config();
+import Fastify from "fastify";
 import { connectDB } from "./db/connect";
 import { notificationRoutes } from "./routes/notification.routes";
 import "./workers/notification.worker";
 import { register } from "./metrics/metrics";
 
-dotenv.config();
+
 
 const app = Fastify();
 app.get("/metrics", async (req, reply) => {
