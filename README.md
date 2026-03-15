@@ -22,12 +22,13 @@ Clients send notification requests to the API. Each request is validated, stored
 ---
 
 ## LIVE DEMO
-```
+
 **Base URL**
 https://notification-system-api-ia9d.onrender.com
+
 **Metrics Endpoint**
 https://notification-system-api-ia9d.onrender.com/metrics
-```
+
 
 ---
 
