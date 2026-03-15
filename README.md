@@ -22,10 +22,12 @@ Clients send notification requests to the API. Each request is validated, stored
 ---
 
 ## LIVE DEMO
+```
 **Base URL**
 https://notification-system-api-ia9d.onrender.com
 **Metrics Endpoint**
 https://notification-system-api-ia9d.onrender.com/metrics
+```
 
 ---
 
@@ -95,17 +97,17 @@ docker compose up -d
 ## Screenshots
 
 ### Worker Logs — Processing, Failures, and Rate Limiting
-![Worker logs showing job processing, simulated failure, retry, and rate limit counts](./screenshots/worker-logs.png)
+![Worker logs showing job processing, simulated failure, retry, and rate limit counts](./public/worker-logs.png)
 
 Shows the worker handling jobs in real time. Job 3 intentionally fails (simulated failure) to verify retry behavior works correctly. Rate limit counts increment as expected.
 
 ### Load Test Results (autocannon — 50 connections, 20s)
-![Autocannon load test results showing latency and throughput stats](./screenshots/load-test.png)
+![Autocannon load test results showing latency and throughput stats](./public/load-test.png)
 
 50 concurrent connections over 20 seconds. ~2,000 total requests processed. Median latency: 290ms, average throughput: ~101 req/sec. The high p99 latency (1580ms) is expected — rate limiting kicks in under load and queues requests.
 
 ### Prometheus Metrics Output
-![Raw Prometheus metrics output showing custom notification counters](./screenshots/prometheus-metrics.png)
+![Raw Prometheus metrics output showing custom notification counters](./public/prometheus-metrics.png)
 
 Custom metrics are exported correctly: 5 notifications created, 2 jobs processed, 0 failed, queue size at 0. Standard Node.js runtime metrics (GC, heap, event loop) are also included automatically via `prom-client`.
 
